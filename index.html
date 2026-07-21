@@ -1037,7 +1037,12 @@ function loop(now){
     updateProjectiles(dt);
     updateParticles(dt);
   }
-  render();
+  if(player && level){
+    render();
+  } else {
+    ctx.fillStyle='#000';
+    ctx.fillRect(0,0,CW,CH);
+  }
   requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);
